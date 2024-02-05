@@ -3,7 +3,15 @@ import "@rainbow-me/rainbowkit/styles.css";
 import type { AppProps } from "next/app";
 import WagmiProvider from "../src/wagmiProvider";
 import Navbar from "./components/navbar";
- 
+
+import '../styles/App.css';
+import '../styles/Chatbot.css';
+import React from "react";
+import Chatbot from "react-chatbot-kit";
+
+import config from "./chatbot/config";
+import MessageParser from "./chatbot/MessageParser";
+import ActionProvider from "./chatbot/ActionProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,6 +20,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Navbar />
         <Component {...pageProps} />
       </WagmiProvider>
+      <div className="App">
+      <header className="App-header">
+        <Chatbot
+          config={config}
+          messageParser={MessageParser}
+          actionProvider={ActionProvider}
+        />
+      </header>
+    </div>
     </main>
   );
 }
