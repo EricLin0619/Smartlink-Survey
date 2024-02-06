@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 
-function OtpCard() {
+function OtpCard(props: any) {
   const [code, setCode] = useState("");
   const [verificationCode, setVerificationCode] = useState("");
 
   const handleConfirm = () => {
     if (verificationCode === code) {
-      alert("驗證成功");
+      props.setAlert(true);
+      setTimeout(() => {
+        props.setAlert(false)
+      }, 2000);
     } else {
       alert("驗證失敗");
     }
