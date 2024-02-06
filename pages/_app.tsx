@@ -4,14 +4,15 @@ import type { AppProps } from "next/app";
 import WagmiProvider from "../src/wagmiProvider";
 import Navbar from "./components/navbar";
 
+import '../styles/LearningOptions.css';
 import '../styles/App.css';
 import '../styles/Chatbot.css';
 import React from "react";
 import Chatbot from "react-chatbot-kit";
 
-import config from "./chatbot/config";
-import MessageParser from "./chatbot/MessageParser";
-import ActionProvider from "./chatbot/ActionProvider";
+import config from "../src/chatbot/config";
+import MessageParser from "../src/chatbot/MessageParser";
+import ActionProvider from "../src/chatbot/ActionProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
