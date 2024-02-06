@@ -14,7 +14,7 @@ const handleSendMessage = async (inputText) => {
   
   const data = await response.json();
   console.log(data);
-  return data.choices[0].message.content;
+  return hello;
 };
 
 export default handleSendMessage;
