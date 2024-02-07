@@ -14,6 +14,7 @@ const LearningOptions = (props) => {
     { text: "3.普通", handler: props.actionProvider.answer3, id: 3 },
     { text: "4.同意", handler: props.actionProvider.answer4, id: 4 },
     { text: "5.非常同意", handler: props.actionProvider.answer5, id: 5 },
+    { text: "問題不清楚?", handler: props.actionProvider.chat, id: 6 }
   ];
 
   const optionsMarkup = options.map((option) => (

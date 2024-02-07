@@ -7,6 +7,7 @@ import Navbar from "../src/components/navbar";
 import '../styles/LearningOptions.css';
 import '../styles/App.css';
 import '../styles/Chatbot.css';
+import '../styles/Chat.css';
 import React from "react";
 import Chatbot from "react-chatbot-kit";
 
