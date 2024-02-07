@@ -1,21 +1,20 @@
 import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
-// import { HNSWLib } from "@langchain/community/vectorstores/hnswlib";
 // import { Document } from "@langchain/core/documents";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 // import { RunnableLambda, RunnableMap, RunnablePassthrough } from "@langchain/core/runnables";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 
-const questions = [
-  "你覺得課程中哪個章節對你來說最有幫助或最感興趣？",
-  "你覺得課程中哪個章節對你來說最困難或最不感興趣？",
-  "你是否覺得考試範圍的設計不夠合理？",
-  "你是否滿意講師的教學方式以及教材設計？",
-  "你是否滿意課堂中提供的資源以及課程網站？",
-];
+// const questions = [
+//   "你覺得課程中哪個章節對你來說最有幫助或最感興趣？",
+//   "你覺得課程中哪個章節對你來說最困難或最不感興趣？",
+//   "你是否覺得考試範圍的設計不夠合理？",
+//   "你是否滿意講師的教學方式以及教材設計？",
+//   "你是否滿意課堂中提供的資源以及課程網站？",
+// ];
 
-let currentQuestionIndex = 0;
-let mode = 'chat'; // 'chat' or 'questionnaire'
-let answers = [];
+// let currentQuestionIndex = 0;
+// let mode = 'chat'; // 'chat' or 'questionnaire'
+// let answers = [];
 
 // const vectorStore = await HNSWLib.fromDocuments(
 //   [
@@ -77,27 +76,34 @@ const outputParser = new StringOutputParser();
 
 const chain = prompt.pipe(model).pipe(outputParser);
 
+// const handleSendMessage = async (inputText) => {
+//   if (inputText === '/questionnaire') {
+//     mode = 'questionnaire';
+//     return questions[currentQuestionIndex];
+//   } else if (inputText === '/ask') {
+//     mode = 'chat';
+//     return "你現在在聊天模式，你可以問我任何問題。";
+//   } else if (mode === 'questionnaire') {
+//     answers.push(inputText);
+//     currentQuestionIndex++;
+//     if (currentQuestionIndex < questions.length) {
+//       return questions[currentQuestionIndex];
+//     } else {
+//       return "問卷已完成，感謝你的回答！";
+//     }
+//   } else if (mode === 'chat') {
+//     // const response = await chain.invoke({question: inputText});
+//     const response = 'I am chatgpt';
+//     return response;
+//   } else {
+//     return "無效的指令。請輸入 /questionnaire 或 /ask。";
+//   }
+// };
+
 const handleSendMessage = async (inputText) => {
-  if (inputText === '/questionnaire') {
-    mode = 'questionnaire';
-    return questions[currentQuestionIndex];
-  } else if (inputText === '/ask') {
-    mode = 'chat';
-    return "你現在在聊天模式，你可以問我任何問題。";
-  } else if (mode === 'questionnaire') {
-    answers.push(inputText);
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-      return questions[currentQuestionIndex];
-    } else {
-      return "問卷已完成，感謝你的回答！";
-    }
-  } else if (mode === 'chat') {
     const response = await chain.invoke({question: inputText});
+    // const response = 'I am chatgpt';
     return response;
-  } else {
-    return "無效的指令。請輸入 /questionnaire 或 /ask。";
-  }
 };
 
 export default handleSendMessage;
