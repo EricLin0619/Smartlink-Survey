@@ -7,7 +7,7 @@ const config = {
   initialMessages: 
   [
     createChatBotMessage(`Hi, I'm SmartLink Survey`), 
-    createChatBotMessage("你是否再填寫教學評量問卷的時候，會擔心身分洩漏，因此不敢暢所欲言",
+    createChatBotMessage("你是否再填寫教學評量問卷的時候，會擔心身分洩漏，因此不敢暢所欲言?",
     {
       withAvatar: true,
       delay: 500,
@@ -26,7 +26,7 @@ const config = {
 
   customComponents: {
     // Replaces the default header
-    header: () => <div style={{ color: 'black', textAlign:'left',fontSize: '20px'}}>&nbsp;SmartLink Survey</div>,
+    header: () => <div style={{ color: 'white', textAlign:'center',fontSize: '20px',backgroundColor:"black"}}>SmartLink Survey</div>,
   },
  };
 
