@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import type { AppProps } from "next/app";
 import WagmiProvider from "../src/wagmiProvider";
-import Navbar from "./components/navbar";
+import Navbar from "../src/components/navbar";
 
 import '../styles/App.css';
 import '../styles/Chatbot.css';
