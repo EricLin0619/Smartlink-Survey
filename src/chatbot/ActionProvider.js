@@ -1,9 +1,9 @@
 import {MessageParser, modeChange} from './MessageParser';
 
 let count = 0;
-const question1 = "1.你覺得課程中哪個章節對你來說最有幫助或最感興趣？";
-const question2 = '2.你覺得課程中哪個章節對你來說最困難或最不感興趣？?';
-const question3 = '3.你是否覺得考試範圍的設計不夠合理？';
+const question1 = '1.你覺得課程中設計的教學章節對你來說是有幫助的嗎？';
+const question2 = '2.你覺得課程中設計的教學章節對你來說是有困難的嗎？';
+const question3 = '3.你是否滿意考試範圍的設計？';
 const question4 = '4.你是否滿意講師的教學方式以及教材設計？';
 const question5 = '5.你是否滿意課堂中提供的資源以及課程網站？';
 const end = '問題結束，謝謝回答'

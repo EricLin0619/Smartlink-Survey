@@ -8,7 +8,7 @@ const config = {
   initialMessages: 
   [
     createChatBotMessage(`Hi, I'm SmartLink Survey`), 
-    createChatBotMessage("1.你覺得課程中哪個章節對你來說最有幫助或最感興趣？",
+    createChatBotMessage('1.你覺得課程中設計的教學章節對你來說是有幫助的嗎？',
     {
       withAvatar: true,
       delay: 500,

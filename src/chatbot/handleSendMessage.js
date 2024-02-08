@@ -59,7 +59,7 @@ const prompt = ChatPromptTemplate.fromMessages([
 ]);
 
 const model = new ChatOpenAI({
-  openAIApiKey: "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",
+  openAIApiKey: "your api key here",
   model: "gpt-3.5-turbo",
   maxTokens: 100,
 });
