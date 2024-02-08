@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { walletEntryPlugin } from "@particle-network/wallet";
+import OtpCard from "../src/components/card/otpCard";
+import AddQuestionButton from "../src/components/button/addQuestions";
+import AddUserButton from "../src/components/button/addUser";
 
 const projectId = "d9711726-29d4-4693-b8b3-ba7d97a6ad43";
 const clientKey = "cBiUsHpenqGTyxX9vcwcZv7tPPk7KBlyM7cBynV5";
@@ -13,7 +16,6 @@ walletEntryPlugin.init({
 walletEntryPlugin.walletEntryCreate();
 
 const Home: NextPage = () => {
-
   return (
     <div>
       <Head>
@@ -24,6 +26,9 @@ const Home: NextPage = () => {
         />
         <link href="/favicon.ico" rel="icon" />
       </Head>
+      <OtpCard />
+      <AddQuestionButton />
+      <AddUserButton />
     </div>
   );
 };
