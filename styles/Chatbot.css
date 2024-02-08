@@ -30,6 +30,7 @@
     font-weight: medium;
     position: relative;
     text-align: left;
+    color: black;
   }
   
   .react-chatbot-kit-user-chat-message-arrow {
@@ -179,15 +180,17 @@
     font-size: 0.85rem;
     border-top: 1px solid #d8d8d8;
     border-bottom-left-radius: 5px;
+    background-color: #f9eaeaf4;
   }
   
   .react-chatbot-kit-chat-input-form {
     width: 100%;
     display: flex;
+    color: #000000;
   }
   
   .react-chatbot-kit-chat-input::placeholder {
-    color: #585858;
+    color: #000000bd;
   }
   
   .react-chatbot-kit-chat-btn-send {
